@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie App UI</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <div class="navbar">
+        <div class="logo">Phim Hay</div>
+        <div class="nav-links">
+            <a href="#">Promotions</a>
+            <a href="#">Featured</a>
+            <a href="#">Top Categories</a>
+            <a href="#">All Categories</a>
+            <a href="#">Pricing</a>
+        </div>
+        <div class="auth-buttons">
+            <button class="login" onclick="redirectTo('login')">Login</button>
+            <button class="register" onclick="redirectTo('register')">Register</button>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <div class="hero">
+        <div class="content">
+            <h1>Mancing Mania The Movie</h1>
+            <p>Watch here and on the app across your devices.</p>
+        </div>
+    </div>
+
+    <!-- Notification Bar -->
+    <div class="notification">
+        This is an example of a message that is commonly used for important information to visitors or users. 
+        <button>Accept</button>
+    </div>
+
+    <script>
+        // Function to redirect to login or register page
+        function redirectTo(type) {
+            if (type === 'login') {
+                window.location.href = 'login-register.html#login';
+            } else if (type === 'register') {
+                window.location.href = 'login-register.html#register';
+            }
+        }
+        document.querySelector('.notification button').addEventListener('click', function() {
+            document.querySelector('.notification').style.display = 'none';
+        });
+    </script>
+</body>
+</html>

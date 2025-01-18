@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login & Register</title>
+    <link rel="stylesheet" href="style.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+
+<body>
+    <div class="container">
+        <!-- Login Form -->
+        <div class="login-form" id="login-form">
+            <form action="">
+                <h1>Login</h1>
+                <div class="input-box">
+                    <input type="text" placeholder="Username" required>
+                    <i class='bx bxs-user'></i>
+                </div>
+                <div class="input-box">
+                    <input type="password" placeholder="Password" required>
+                    <i class='bx bxs-lock-alt'></i>
+                </div>
+                <div>
+                    <label><input type="checkbox"> Remember me</label>
+                    <label><a href="#">Forget password?</a></label>
+                </div>
+                <div>
+                    <button type="submit" class="btn">Login</button>
+                </div>
+                <div>
+                    <p>Don't have an account? <a href="#" onclick="switchToRegister()">Register</a></p>
+                </div>
+            </form>
+        </div>
+
+        <!-- Register Form -->
+        <div class="register-form" id="register-form" style="display: none;">
+            <form action="">
+                <h1>Register</h1>
+                <div class="input-box">
+                    <input type="text" placeholder="Username" required>
+                    <i class='bx bxs-user'></i>
+                </div>
+                <div class="input-box">
+                    <input type="email" placeholder="Email" required>
+                    <i class='bx bxs-envelope'></i>
+                </div>
+                <div class="input-box">
+                    <input type="password" placeholder="Password" required>
+                    <i class='bx bxs-lock-alt'></i>
+                </div>
+                <div>
+                    <button type="submit" class="btn">Register</button>
+                </div>
+                <div>
+                    <p>Already have an account? <a href="#" onclick="switchToLogin()">Login</a></p>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        // Handle URL hash to display the correct form
+        window.onload = function () {
+            const hash = window.location.hash;
+            if (hash === '#login') {
+                document.getElementById('login-form').style.display = 'block';
+                document.getElementById('register-form').style.display = 'none';
+            } else if (hash === '#register') {
+                document.getElementById('register-form').style.display = 'block';
+                document.getElementById('login-form').style.display = 'none';
+            }
+        };
+
+        // Switch between Login and Register forms
+        function switchToRegister() {
+            document.getElementById('login-form').style.display = 'none';
+            document.getElementById('register-form').style.display = 'block';
+        }
+
+        function switchToLogin() {
+            document.getElementById('register-form').style.display = 'none';
+            document.getElementById('login-form').style.display = 'block';
+        }
+    </script>
+</body>
+
+</html>
