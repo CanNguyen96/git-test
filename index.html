@@ -37,18 +37,6 @@
         <button>Accept</button>
     </div>
 
-    <script>
-        // Function to redirect to login or register page
-        function redirectTo(type) {
-            if (type === 'login') {
-                window.location.href = 'login-register.html#login';
-            } else if (type === 'register') {
-                window.location.href = 'login-register.html#register';
-            }
-        }
-        document.querySelector('.notification button').addEventListener('click', function() {
-            document.querySelector('.notification').style.display = 'none';
-        });
-    </script>
+    <script src="script.js"></script>
 </body>
 </html>
